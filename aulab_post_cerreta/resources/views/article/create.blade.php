@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container-fluid p-5 bg-secondary-subtle text-center">
-        <div class="row justify-content-cenetr">
+        <div class="row justify-content-center">
             <div class="col-12">
                 <h1 class="display-1">Inserisci un articolo</h1>
             </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Immagine</label>
-                        <input type="text" name="image" class="form-control" id="image">
+                        <input type="file" name="image" class="form-control" id="image">
                         @error('image')
                             <span class="text-danger">{{$message}}</span>
                         @enderror    

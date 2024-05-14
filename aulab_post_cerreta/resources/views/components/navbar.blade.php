@@ -28,6 +28,9 @@
       <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
     </ul>
   </li>
-@endguest  
+@endguest
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
+</li>
 
       

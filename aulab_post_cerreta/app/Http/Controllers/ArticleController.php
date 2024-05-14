@@ -22,7 +22,13 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function index()
     {
-        //
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('article.index', compact('articles'));
+    }
+
+    public function show(Article $article)
+    {
+        return view('article.show', compact('article'));
     }
 
     /**
@@ -54,14 +60,6 @@ class ArticleController extends Controller implements HasMiddleware
             'category_id' => $request->category,
             'user_id' => Auth::user()->id,
         ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Article $article)
-    {
-        //
     }
 
     /**
