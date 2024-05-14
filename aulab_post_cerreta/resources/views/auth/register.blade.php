@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-secondary-subtle text-center">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h1 class="display-1">Registrati</h1>
-            </div>
+    <div class="container-fluid p-5 bg-info text-center text-white">
+        <dv class="row justify-content-center">
+            <h1 class="display-1">
+                Registrati
+            </h1>
         </div>
     </div>
     <div class="container my-5">
