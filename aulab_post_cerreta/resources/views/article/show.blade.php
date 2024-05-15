@@ -17,7 +17,8 @@
                         <a href="{{route('article.byCategory', $article->category)}}" class="text-capitalize fw-bold text-muted">{{ $article->category->name }}</a>
                     </p>
                     <div class="text-muted my-3">
-                        <p>Redatto il: {{$article->created_at->format('d/m/Y')}} da {{$article->user->name}}</p>
+                        <p>Redatto il: {{$article->created_at->format('d/m/Y')}}
+                            da <a href="{{route('article.byRedactor', $article->user)}}">{{$article->user->name}}</a></p>
                     </div>
                 </div>
                 <hr>

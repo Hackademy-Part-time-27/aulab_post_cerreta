@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,7 @@ class ArticleController extends Controller implements HasMiddleware
     public static function middleware()
     {
         return [
-            new Middleware('auth', except: ['index', 'show']),
+            new Middleware('auth', except: ['index', 'show', 'byCategory', 'byUser']),
         ];
     }
     /**
@@ -90,5 +91,10 @@ class ArticleController extends Controller implements HasMiddleware
     public function byCategory(Category $category) {
         $articles = $category->articles()->orderBy('created_at', 'desc')->get();
         return view('article.by-category', compact('category', 'articles'));
+    }
+
+    public function byRedactor(User $user) {
+        $articles = $user->articles()->orderBy('created_at', 'desc')->get();
+        return view('article.by-redactor', compact('user', 'articles'));
     }
 }
