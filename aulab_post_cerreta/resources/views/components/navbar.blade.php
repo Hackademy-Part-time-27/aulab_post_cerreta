@@ -2,6 +2,7 @@
 <li class="nav-item">
   <a class="nav-link" href="{{route('article.create')}}">Inserisci un articolo</a>
 </li>
+<li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ciao {{ Auth::user()->name }}
@@ -31,6 +32,9 @@
 @endguest
 <li class="nav-item">
   <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{{route('careers')}}">Lavora con noi</a>
 </li>
 
       

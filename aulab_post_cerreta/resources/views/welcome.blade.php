@@ -13,6 +13,14 @@
         </div>
     @endif
 
+    @if (session('alert'))
+        <div class="alert alert-danger">
+            {{ session('alert') }}
+        </div>
+    @endif
+
+
+
     <div class="container my-5">
         <div class="row justify-content-evenly">
             @foreach($articles as $article)
@@ -29,7 +37,8 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between align-items-center">
                             <p>Redatto il {{$article->created_at->format('d/m/Y')}} <br>
-                                da <a href="{{route('article.byRedactor', $article->user)}}">{{$article->user->name}}</a></p>
+                                da <a href="{{route('article.byRedactor', $article->user)}}">{{$article->user->name}}</a>
+                            </p>
                             <a href="{{route('article.show', $article)}}" class="btn btn-outline-secondary">Leggi</a>
                         </div>  
                     </div>
