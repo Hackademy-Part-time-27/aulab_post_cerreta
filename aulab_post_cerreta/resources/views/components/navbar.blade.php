@@ -2,7 +2,12 @@
 <li class="nav-item">
   <a class="nav-link" href="{{route('article.create')}}">Inserisci un articolo</a>
 </li>
-<li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
+@if (Auth::user()->is_admin)
+  <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
+@endif
+@if (Auth::user()->is_revisor)
+  <li><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard Revisor</a></li>
+@endif
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ciao {{ Auth::user()->name }}
